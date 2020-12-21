@@ -1,0 +1,44 @@
+﻿<Properties StartupConfiguration="{69F34BD6-46D5-4C4C-8551-028CE9EBFC91}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/Activities/LoginActivity.cs">
+    <Files>
+      <File FileName="Droid/Activities/LoginActivity.cs" Line="18" Column="25" />
+      <File FileName="SampleLogin/ViewModels/LoginUserViewModel.cs" Line="14" Column="39" />
+      <File FileName="Droid/MainApplication.cs" />
+      <File FileName="SampleLogin/Services/CloudDataStore.cs" Line="1" Column="1" />
+      <File FileName="SampleLogin/App.cs" Line="19" Column="1" />
+      <File FileName="Droid/Activities/AccountInfoActivity.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SampleLogin" expanded="True">
+            <Node name="SampleLogin" expanded="True">
+              <Node name="Helpers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+            </Node>
+            <Node name="SampleLogin.Droid" expanded="True">
+              <Node name="Activities" expanded="True">
+                <Node name="LoginActivity.cs" selected="True" />
+              </Node>
+              <Node name="Helpers" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="layout" expanded="True" />
+                <Node name="values" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.SampleLogin FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.SampleLogin.Droid AndroidDesignerPreferredTheme="MasterDetailTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.R58N137QZ8P" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
