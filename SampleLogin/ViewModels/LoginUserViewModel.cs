@@ -12,15 +12,15 @@ namespace SampleLogin
         public Action onLoginSuccess { get; set; }
         public Action<bool> activateButton { get; set; }
         public Action userDoesntExists { get; set; }
+        public Action invalidPassword { get; set; }
+        
+
 
         public string userId, userPassword;
 
         public async void tryLogin()
         {
             await validateUser();
-            // Implement Db functionality
-            //var isUserExists = validateUser();
-            
         }
 
         private async Task validateUser()
@@ -30,11 +30,14 @@ namespace SampleLogin
             {
                 userDoesntExists?.Invoke();
             }
-              
-            if (accountInfo.Password == userPassword)
+            else if (accountInfo.Password == userPassword)
+            {
                 onLoginSuccess?.Invoke();
-
-
+            }
+            else if (accountInfo.Password != userPassword)
+            {
+                invalidPassword?.Invoke();
+            }
         }
 
         public void TextValueChanged()
@@ -44,6 +47,7 @@ namespace SampleLogin
             if (hasValidPasswordInput && hasValidUserNameInput)
             {
                 activateButton?.Invoke(true);
+                return;
             }
             activateButton?.Invoke(false);
 
