@@ -303,3 +303,11 @@
 /Users/nutulapr/Projects/SampleLogin/Droid/bin/Debug/Plugin.Share.dll.mdb
 /Users/nutulapr/Projects/SampleLogin/Droid/bin/Debug/Plugin.Connectivity.dll.mdb
 /Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/android/src/crc641ee3f01754c72742/LoginActivity.java
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/activity_login.xml
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/activity_accountinfo.xml
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/android/src/crc641ee3f01754c72742/AccountInfoActivity.java
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/android/src/crc642c2dfa866a041842/TextWatcher.java
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/activity_validation.xml
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/android/src/crc641ee3f01754c72742/ValidationActivity.java
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/drawable/failed.png
+/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/drawable/check.png

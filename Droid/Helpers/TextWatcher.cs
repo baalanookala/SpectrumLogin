@@ -1,18 +1,25 @@
 ﻿using System;
 using Android.Text;
 using Java.Lang;
+using SampleLogin.Droid.Interfaces;
 
 namespace SampleLogin.Droid.Helpers
 {
     public class TextWatcher : Java.Lang.Object, ITextWatcher
     {
-        private string vmStringValue;
-        private Action onTextValueChanged;
+        private iOnTextChanged onTextChanged1;
+        private InputField inputX;
+        private string phnNumber;
 
-        public TextWatcher(string vmStringValue, Action onTextValueChanged)
+
+        public TextWatcher()
         {
-            this.vmStringValue = vmStringValue;
-            this.onTextValueChanged = onTextValueChanged;
+        }
+
+        public TextWatcher(iOnTextChanged onTextChanged, InputField inputX)
+        {
+            this.onTextChanged1 = onTextChanged;
+            this.inputX = inputX;
         }
 
         public void AfterTextChanged(IEditable s)
@@ -27,9 +34,11 @@ namespace SampleLogin.Droid.Helpers
 
         public void OnTextChanged(ICharSequence s, int start, int before, int count)
         {
-            this.vmStringValue = s.ToString();
-            this.onTextValueChanged?.Invoke();
+           
+                this.onTextChanged1?.setText(s.ToString(), inputX);
+            
         }
-      
+
     }
+
 }

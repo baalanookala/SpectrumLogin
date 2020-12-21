@@ -23,4 +23,14 @@
     <string name="not_user">Not User? Create Account.</string>
     <string name="sign_in">Sign In</string>
 
+    
+    <string name="usedId">User Id</string>
+    <string name="password">Password</string>
+
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="userName">User Name</string>
+    <string name="phoneNum">Phone Number</string>
+    <string name="startDate">Start Date</string>
+
 </resources>

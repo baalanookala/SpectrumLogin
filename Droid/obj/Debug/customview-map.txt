@@ -47,6 +47,7 @@ EditText;obj/Debug/res/layout/activity_login.xml
 EditText;obj/Debug/res/layout/activity_myitem_details.xml
 FrameLayout;obj/Debug/res/layout/fragment_browse.xml
 FrameLayout;obj/Debug/res/layout/fragment_myitems.xml
+ImageView;obj/Debug/res/layout/activity_validation.xml
 ImageView;obj/Debug/res/layout/fragment_about.xml
 include;obj/Debug/res/layout/activity_main.xml
 item;obj/Debug/res/drawable/background_splash.xml
@@ -61,6 +62,7 @@ LinearLayout;obj/Debug/res/layout/activity_add_item.xml
 LinearLayout;obj/Debug/res/layout/activity_item_details.xml
 LinearLayout;obj/Debug/res/layout/activity_login.xml
 LinearLayout;obj/Debug/res/layout/activity_myitem_details.xml
+LinearLayout;obj/Debug/res/layout/activity_validation.xml
 LinearLayout;obj/Debug/res/layout/fragment_about.xml
 menu;obj/Debug/res/menu/top_menus.xml
 ProgressBar;obj/Debug/res/layout/activity_myitem_details.xml
@@ -90,6 +92,7 @@ TextView;obj/Debug/res/layout/activity_add_item.xml
 TextView;obj/Debug/res/layout/activity_item_details.xml
 TextView;obj/Debug/res/layout/activity_login.xml
 TextView;obj/Debug/res/layout/activity_myitem_details.xml
+TextView;obj/Debug/res/layout/activity_validation.xml
 TextView;obj/Debug/res/layout/fragment_about.xml
 TextView;obj/Debug/res/layout/item_browse.xml
 TextView;obj/Debug/res/layout/item_my_item.xml

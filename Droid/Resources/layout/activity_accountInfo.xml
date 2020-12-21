@@ -1,39 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:gravity="center"
+	android:padding="10dp"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:minWidth="25px"
-		android:minHeight="25px"
 		android:id="@+id/firstName"
+		android:paddingBottom="20dp"
+		android:hint="@string/firstName"
 		android:inputType="text" />
 	<EditText
 		android:inputType="text"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:paddingBottom="20dp"
+		android:hint="@string/lastName"
 		android:id="@+id/lastName" />
 	<EditText
 		android:inputType="text"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:paddingBottom="20dp"
+		android:hint="@string/userName"
 		android:id="@+id/userName" />
 	<EditText
 		android:inputType="textPassword"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:paddingBottom="20dp"
+		android:hint="@string/password"
 		android:id="@+id/newPassword" />
 	<EditText
 		android:inputType="phone"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:maxLength="13"
+		android:paddingBottom="20dp"
+		android:hint="@string/phoneNum"
 		android:id="@+id/phonenumber" />
-	<DatePicker
+	<EditText
+		android:inputType="date"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:paddingBottom="20dp"
+		android:hint="@string/startDate"
 		android:id="@+id/accountDatePicker" />
 	<Button
 		android:text="@string/create_account"
-		android:layout_width="match_parent"
+		android:layout_width="150dp"
 		android:layout_height="wrap_content"
+		android:layout_marginTop="25dp"
+		android:enabled="false"
 		android:id="@+id/createAccount" />
 </LinearLayout>

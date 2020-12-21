@@ -132,6 +132,9 @@
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Helpers\TextWatcher.cs" />
     <Compile Include="Activities\AccountInfoActivity.cs" />
+    <Compile Include="Activities\ValidationActivity.cs" />
+    <Compile Include="Interfaces\iOnTextChanged.cs" />
+    <Compile Include="Helpers\InputField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -181,6 +184,21 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_validation.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\failed.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\check.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="..\SampleLogin\SampleLogin.projitems" Label="Shared" Condition="Exists('..\SampleLogin\SampleLogin.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
