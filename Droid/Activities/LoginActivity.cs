@@ -1,13 +1,8 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V4.App;
-using Android.Support.V4.View;
-using Android.Support.Design.Widget;
-using System;
 using SampleLogin.Models;
 using SampleLogin.Droid.Helpers;
 
@@ -23,7 +18,7 @@ namespace SampleLogin.Droid.Activities
         EditText userId;
         EditText password;
         Button signIn_btn;
-        Button newUser_btn;
+        TextView newUser_btn;
         LoginUserViewModel viewModel = new LoginUserViewModel();
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -31,13 +26,15 @@ namespace SampleLogin.Droid.Activities
             base.OnCreate(savedInstanceState);
             userId = FindViewById<EditText>(Resource.Id.userId);
             password = FindViewById<EditText>(Resource.Id.password);
+            signIn_btn = FindViewById<Button>(Resource.Id.signIn);
+            newUser_btn = FindViewById<TextView>(Resource.Id.newUser);
 
             userId.AddTextChangedListener(new TextWatcher(viewModel.userId, viewModel.TextValueChanged));
             password.AddTextChangedListener(new TextWatcher(viewModel.userPassword, viewModel.TextValueChanged));
             viewModel.onLoginSuccess = LoginSucess;
             viewModel.activateButton = ActivateButton;
+            viewModel.userDoesntExists = InvalidUser;
 
-            // Create your application here
         }
 
         private void ActivateButton(bool isEnabled)
@@ -49,6 +46,13 @@ namespace SampleLogin.Droid.Activities
         {
             // Trigger an intent to launch new Activity
         }
+
+        private void InvalidUser()
+        {
+            // Trigger an intent to launch new Activity
+        }
+
+
 
         public void OnClick(View v)
         {

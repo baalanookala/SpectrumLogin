@@ -7,7 +7,12 @@ namespace SampleLogin
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => ServiceLocator.Instance.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Item> DataStore => ServiceLocator.Instance.Get<IDataStore<Item>>() ?? MockDataStore();
+
+        private IDataStore<Item> MockDataStore()
+        {
+            throw new NotImplementedException();
+        }
 
         bool isBusy = false;
         public bool IsBusy

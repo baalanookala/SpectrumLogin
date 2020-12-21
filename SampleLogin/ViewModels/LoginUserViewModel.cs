@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using SampleLogin.Models;
 
 namespace SampleLogin
 {
-    public class LoginUserViewModel : BaseViewModel
+    public class LoginUserViewModel
     {
         public LoginUserViewModel()
         {
@@ -16,15 +15,12 @@ namespace SampleLogin
 
         public string userId, userPassword;
 
-        public void tryLogin()
+        public async void tryLogin()
         {
+            await validateUser();
             // Implement Db functionality
-            var isUserExists = validateUser();
-            var success = false;
-            if (success)
-            {
-
-            }
+            //var isUserExists = validateUser();
+            
         }
 
         private async Task validateUser()
@@ -34,10 +30,10 @@ namespace SampleLogin
             {
                 userDoesntExists?.Invoke();
             }
-
+              
             if (accountInfo.Password == userPassword)
                 onLoginSuccess?.Invoke();
-           
+
 
         }
 
@@ -45,7 +41,7 @@ namespace SampleLogin
         {
             var hasValidUserNameInput = !String.IsNullOrWhiteSpace(userId);
             var hasValidPasswordInput = !String.IsNullOrWhiteSpace(userPassword);
-            if(hasValidPasswordInput && hasValidUserNameInput)
+            if (hasValidPasswordInput && hasValidUserNameInput)
             {
                 activateButton?.Invoke(true);
             }

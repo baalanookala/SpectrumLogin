@@ -131,6 +131,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Helpers\TextWatcher.cs" />
+    <Compile Include="Activities\AccountInfoActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -173,6 +174,10 @@
     <AndroidResource Include="Resources\values-v19\styles.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
     <AndroidResource Include="Resources\layout\activity_login.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_accountInfo.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
