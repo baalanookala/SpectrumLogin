@@ -1,24 +1,21 @@
 ﻿
+using System;
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using SampleLogin.Models;
 using SampleLogin.Droid.Helpers;
-using SampleLogin.ViewModels;
-using System;
-using static Android.App.DatePickerDialog;
-using Android.Content;
 using SampleLogin.Droid.Interfaces;
-using Android.Telephony;
-using Android.Views.InputMethods;
+using SampleLogin.ViewModels;
+using static Android.App.DatePickerDialog;
 
 namespace SampleLogin.Droid.Activities
 {
     [Activity(Label = "AccountInfoActivity", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
-    public class AccountInfoActivity : BaseActivity, View.IOnClickListener, iOnTextChanged, IOnDateSetListener
+    public class AccountInfoActivity : BaseActivity, View.IOnClickListener, IOnTextChanged, IOnDateSetListener
     {
 
         protected override int LayoutResource => Resource.Layout.activity_accountInfo;
@@ -29,7 +26,7 @@ namespace SampleLogin.Droid.Activities
         EditText phoneNumber;
         EditText accountDatePicker;
         Button createAccount;
-        AccountInfoViewModel viewModel = new AccountInfoViewModel();
+        readonly AccountInfoViewModel viewModel = new AccountInfoViewModel();
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -42,8 +39,9 @@ namespace SampleLogin.Droid.Activities
             password = FindViewById<EditText>(Resource.Id.newPassword);
             phoneNumber = FindViewById<EditText>(Resource.Id.phonenumber);
             accountDatePicker = FindViewById<EditText>(Resource.Id.accountDatePicker);
-            accountDatePicker.Text = DateTime.Now.ToShortDateString();
             createAccount = FindViewById<Button>(Resource.Id.createAccount);
+
+            accountDatePicker.Text = DateTime.Now.ToShortDateString();
             createAccount.SetOnClickListener(this);
 
             firstName.AddTextChangedListener(new TextWatcher(this, InputField.firstName));
@@ -51,8 +49,9 @@ namespace SampleLogin.Droid.Activities
             userName.AddTextChangedListener(new TextWatcher(this, InputField.userName));
             password.AddTextChangedListener(new TextWatcher(this, InputField.password));
             phoneNumber.AddTextChangedListener(new TextWatcher(this, InputField.phoneNumber));
-            viewModel.activateCreateButton = CreateButton;
-            viewModel.onCreationSuccess = AccountSucess;
+
+            viewModel.ActivateCreateButton = CreateButton;
+            viewModel.OnCreationSuccess = AccountSucess;
 
 
             accountDatePicker.Click += delegate
@@ -79,29 +78,13 @@ namespace SampleLogin.Droid.Activities
             {
                 case (Resource.Id.createAccount):
                     {
-                        var accountInfo = new AccountInfo
-                        {
-                            FirstName = firstName.Text,
-                            LastName = lastName.Text,
-                            UserName = userName.Text,
-                            Password = password.Text,
-                            PhoneNumber = phoneNumber.Text,
-                            StartDate = GetDate(accountDatePicker.Text)
-                        };
-                        viewModel.createAccountAsync(accountInfo);
+                        viewModel.CreateAccountAsync();
                         break;
                     }
 
                 default:
                     break;
             }
-        }
-
-        private DateTime GetDate(string text)
-        {
-            DateTime dateTime = DateTime.Now;
-            DateTime.TryParse(text, out dateTime);
-            return dateTime;
         }
 
         private void OnClickDateEditText()
@@ -116,21 +99,25 @@ namespace SampleLogin.Droid.Activities
             accountDatePicker.Text = new DateTime(year, month + 1, dayOfMonth).ToShortDateString();
         }
 
-        public void setText(string userInput, InputField field)
+        public void SetText(string userInput, InputField field)
         {
             switch (field)
             {
                 case InputField.firstName:
                     viewModel.firstName = userInput;
+                    viewModel.UserInputChanged();
                     break;
                 case InputField.lastName:
                     viewModel.lastName = userInput;
+                    viewModel.UserInputChanged();
                     break;
                 case InputField.password:
                     viewModel.password = userInput;
+                    viewModel.UserInputChanged();
                     break;
                 case InputField.userName:
                     viewModel.userName = userInput;
+                    viewModel.UserInputChanged();
                     break;
                 case InputField.phoneNumber:
                     if (userInput.Length == 10)
@@ -141,27 +128,15 @@ namespace SampleLogin.Droid.Activities
                         HideKeyboard();
                     }
                     viewModel.phoneNumber = userInput;
+                    viewModel.UserInputChanged();
                     break;
                 case InputField.date:
                     DateTime dateTime = DateTime.Now;
                     DateTime.TryParse(userInput, out dateTime);
                     viewModel.startDate = dateTime;
+                    viewModel.DatePickerValueChanged();
                     break;
 
-            }
-            viewModel.TextValueChanged();
-        }
-
-        public void HideKeyboard()
-        {
-
-            var inputMethodManager = this.GetSystemService(Context.InputMethodService) as InputMethodManager;
-            if (inputMethodManager != null && this is Activity)
-            {
-                var token = this.CurrentFocus?.WindowToken;
-                inputMethodManager.HideSoftInputFromWindow(token, HideSoftInputFlags.None);
-
-                this.Window.DecorView.ClearFocus();
             }
         }
 

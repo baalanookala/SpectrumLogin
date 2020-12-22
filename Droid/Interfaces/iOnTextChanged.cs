@@ -1,11 +1,9 @@
-﻿using System;
-using SampleLogin.Droid.Activities;
-using SampleLogin.Droid.Helpers;
+﻿using SampleLogin.Droid.Helpers;
 
 namespace SampleLogin.Droid.Interfaces
 {
-    public interface iOnTextChanged
+    public interface IOnTextChanged
     {
-        void setText(string x, InputField y);
+        void SetText(string inputValue, InputField inputFieldType);
     }
 }

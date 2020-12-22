@@ -1,8 +1,13 @@
-﻿using System;
-namespace SampleLogin.Droid.Helpers
+﻿namespace SampleLogin.Droid.Helpers
 {
     public enum InputField
     {
-        userId, password, firstName, lastName, userName, phoneNumber, date
+        userId,
+        password,
+        firstName,
+        lastName,
+        userName,
+        phoneNumber,
+        date
     }
 }

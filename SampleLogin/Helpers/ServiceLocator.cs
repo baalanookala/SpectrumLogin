@@ -10,6 +10,7 @@ namespace SampleLogin
 
         public static ServiceLocator Instance => instance.Value;
 
+
         public void Register<TContract, TService>() where TService : new()
         {
             registeredServices[typeof(TContract)] =
@@ -18,12 +19,18 @@ namespace SampleLogin
 
         public T Get<T>() where T : class
         {
-            Lazy<object> service;
-            if (registeredServices.TryGetValue(typeof(T), out service))
+            try
             {
-                return (T)service.Value;
+                Lazy<object> service;
+                if (registeredServices.TryGetValue(typeof(T), out service))
+                {
+                    return (T)service.Value;
+                }
             }
+            catch (Exception ex)
+            {
 
+            }
             return null;
         }
     }

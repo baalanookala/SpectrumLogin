@@ -1,6 +1,9 @@
-﻿using Android.OS;
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
+using Android.Views.InputMethods;
 
 namespace SampleLogin.Droid
 {
@@ -34,6 +37,18 @@ namespace SampleLogin.Droid
         protected int ActionBarIcon
         {
             set { Toolbar?.SetNavigationIcon(value); }
+        }
+
+        protected void HideKeyboard()
+        {
+            var inputMethodManager = this.GetSystemService(Context.InputMethodService) as InputMethodManager;
+            if (inputMethodManager != null && this is Activity)
+            {
+                var token = this.CurrentFocus?.WindowToken;
+                inputMethodManager.HideSoftInputFromWindow(token, HideSoftInputFlags.None);
+
+                this.Window.DecorView.ClearFocus();
+            }
         }
     }
 }

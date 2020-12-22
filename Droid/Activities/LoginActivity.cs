@@ -3,11 +3,10 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
-using Android.Views.InputMethods;
 using Android.Widget;
 using SampleLogin.Droid.Helpers;
 using SampleLogin.Droid.Interfaces;
-using SampleLogin.Models;
+using SampleLogin.Helpers;
 
 namespace SampleLogin.Droid.Activities
 {
@@ -15,15 +14,14 @@ namespace SampleLogin.Droid.Activities
         LaunchMode = LaunchMode.SingleTop,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
-    public class LoginActivity : BaseActivity, View.IOnClickListener, iOnTextChanged
+    public class LoginActivity : BaseActivity, View.IOnClickListener, IOnTextChanged
     {
         protected override int LayoutResource => Resource.Layout.activity_login;
         EditText userId;
         EditText password;
         Button signIn_btn;
         TextView newUser_btn;
-        LoginUserViewModel viewModel = new LoginUserViewModel();
-        TextWatcher userIdTextWatcher = new TextWatcher();
+        readonly LoginUserViewModel viewModel = new LoginUserViewModel();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,16 +29,17 @@ namespace SampleLogin.Droid.Activities
             userId = FindViewById<EditText>(Resource.Id.userId);
             password = FindViewById<EditText>(Resource.Id.password);
             signIn_btn = FindViewById<Button>(Resource.Id.signIn);
-            signIn_btn.SetOnClickListener(this);
             newUser_btn = FindViewById<TextView>(Resource.Id.newUser);
+
+            signIn_btn.SetOnClickListener(this);
             newUser_btn.SetOnClickListener(this);
 
             userId.AddTextChangedListener(new TextWatcher(this, InputField.userId));
             password.AddTextChangedListener(new TextWatcher(this, InputField.password));
-            viewModel.onLoginSuccess = loginSucess;
-            viewModel.activateButton = activateButton;
-            viewModel.userDoesntExists = invalidUser;
-            viewModel.invalidPassword = invalidPassword;
+
+            viewModel.OnLoginSuccess = LoginSucess;
+            viewModel.ActivateButton = ActivateButton;
+            viewModel.ShowErrorToast = ShowToast;
         }
 
         private void NewUser()
@@ -48,37 +47,19 @@ namespace SampleLogin.Droid.Activities
             StartActivity(typeof(AccountInfoActivity));
         }
 
-        private void activateButton(bool isEnabled)
+        private void ActivateButton(bool isEnabled)
         {
-            if (isEnabled)
-            {
-                signIn_btn.Enabled = true;
-            }
-            else
-            {
-                signIn_btn.Enabled = false;
-            }
-
+            signIn_btn.Enabled = isEnabled;
         }
 
-        private void loginSucess()
+        private void LoginSucess()
         {
             var validationAct = new Intent(this, typeof(ValidationActivity));
-            validationAct.PutExtra("isValidUser", true);
+            validationAct.PutExtra(StringConstants.isValidUser, true);
             StartActivity(validationAct);
         }
 
-        private void invalidUser()
-        {
-            showToast("User Doesnt Exist");
-        }
-
-        private void invalidPassword()
-        {
-            showToast("Password Doesn't match");
-        }
-
-        private void showToast(string text)
+        private void ShowToast(string text)
         {
             var toast = Toast.MakeText(this, text, ToastLength.Long);
             toast.Show();
@@ -91,13 +72,8 @@ namespace SampleLogin.Droid.Activities
             {
                 case (Resource.Id.signIn):
                     {
-                        var loginInfo = new LoginInfo
-                        {
-                            Id = userId.Text,
-                            Password = password.Text
-                        };
                         HideKeyboard();
-                        viewModel.tryLogin();
+                        viewModel.TryLogin();
                         break;
                     }
                 case (Resource.Id.newUser):
@@ -110,15 +86,15 @@ namespace SampleLogin.Droid.Activities
             }
         }
 
-        public void setText(string x, InputField y)
+        public void SetText(string input, InputField inputField)
         {
-            switch (y)
+            switch (inputField)
             {
                 case InputField.userId:
-                    viewModel.userId = x;
+                    viewModel.userId = input;
                     break;
                 case InputField.password:
-                    viewModel.userPassword = x;
+                    viewModel.userPassword = input;
                     break;
             }
             viewModel.TextValueChanged();
@@ -126,20 +102,7 @@ namespace SampleLogin.Droid.Activities
 
         public override void OnBackPressed()
         {
-            //base.OnBackPressed();
-        }
-
-        public void HideKeyboard()
-        {
-            
-            var inputMethodManager = this.GetSystemService(Context.InputMethodService) as InputMethodManager;
-            if (inputMethodManager != null && this is Activity)
-            {
-                var token = this.CurrentFocus?.WindowToken;
-                inputMethodManager.HideSoftInputFromWindow(token, HideSoftInputFlags.None);
-
-                this.Window.DecorView.ClearFocus();
-            }
+            // Intentionally left it blank
         }
 
     }

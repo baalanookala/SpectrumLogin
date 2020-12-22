@@ -1,55 +1,55 @@
 ﻿using System;
 using System.Threading.Tasks;
+using SampleLogin.Helpers;
 
 namespace SampleLogin
 {
-    public class LoginUserViewModel
+    public class LoginUserViewModel : BaseViewModel
     {
+
         public LoginUserViewModel()
         {
 
         }
-        public Action onLoginSuccess { get; set; }
-        public Action<bool> activateButton { get; set; }
-        public Action userDoesntExists { get; set; }
-        public Action invalidPassword { get; set; }
-        
+        public Action OnLoginSuccess { get; set; }
+        public Action<bool> ActivateButton { get; set; }
+        public Action<string> ShowErrorToast { get; set; }
 
+        public string userId;
+        public string userPassword;
 
-        public string userId, userPassword;
-
-        public async void tryLogin()
+        public async void TryLogin()
         {
-            await validateUser();
+            await ValidateUser();
         }
 
-        private async Task validateUser()
+        private async Task ValidateUser()
         {
             var accountInfo = await MockDataStore.GetItemAsync(userId);
             if (accountInfo == null)
             {
-                userDoesntExists?.Invoke();
+                ShowErrorToast?.Invoke(StringConstants.noUser);
             }
             else if (accountInfo.Password == userPassword)
             {
-                onLoginSuccess?.Invoke();
+                OnLoginSuccess?.Invoke();
             }
             else if (accountInfo.Password != userPassword)
             {
-                invalidPassword?.Invoke();
+                ShowErrorToast?.Invoke(StringConstants.wrongPassword);
             }
         }
 
         public void TextValueChanged()
         {
-            var hasValidUserNameInput = !String.IsNullOrWhiteSpace(userId);
-            var hasValidPasswordInput = !String.IsNullOrWhiteSpace(userPassword);
+            var hasValidUserNameInput = !string.IsNullOrWhiteSpace(userId);
+            var hasValidPasswordInput = !string.IsNullOrWhiteSpace(userPassword);
             if (hasValidPasswordInput && hasValidUserNameInput)
             {
-                activateButton?.Invoke(true);
+                ActivateButton?.Invoke(true);
                 return;
             }
-            activateButton?.Invoke(false);
+            ActivateButton?.Invoke(false);
 
         }
     }

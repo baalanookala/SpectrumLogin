@@ -34,7 +34,7 @@ namespace SampleLogin.Droid
         {
             CrossCurrentActivity.Current.Activity = activity;
         }
-
+         
         public void OnActivityDestroyed(Activity activity)
         {
 

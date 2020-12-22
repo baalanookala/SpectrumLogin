@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using SampleLogin.Helpers;
+using SampleLogin.Models;
 
 namespace SampleLogin
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => ServiceLocator.Instance.Get<IDataStore<Item>>() ?? MockDataStore();
-
-        private IDataStore<Item> MockDataStore()
-        {
-            throw new NotImplementedException();
-        }
+        public IDataStore<AccountInfo> MockDataStore => ServiceLocator.Instance.Get<IDataStore<AccountInfo>>();
 
         bool isBusy = false;
         public bool IsBusy
