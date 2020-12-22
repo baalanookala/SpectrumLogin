@@ -1,16 +1,12 @@
 ﻿<Properties StartupConfiguration="{69F34BD6-46D5-4C4C-8551-028CE9EBFC91}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Droid/Activities/ValidationActivity.cs" Line="4" Column="27" />
-      <File FileName="Droid/Activities/LoginActivity.cs" Line="13" Column="52" />
-      <File FileName="Droid/Resources/values/Strings.xml" />
-      <File FileName="Droid/Resources/values/colors.xml" />
-      <File FileName="Droid/Activities/BaseActivity.cs" Line="28" Column="31" />
-      <File FileName="Droid/Activities/AccountInfoActivity.cs" Line="54" Column="57" />
-      <File FileName="SampleLogin/ViewModels/AccountInfoViewModel.cs" Line="93" Column="14" />
-      <File FileName="SampleLogin/Helpers/StringConstants.cs" Line="11" Column="88" />
-      <File FileName="SampleLogin/ViewModels/LoginUserViewModel.cs" Line="18" Column="36" />
-      <File FileName="SampleLogin/ViewModels/BaseViewModel.cs" Line="8" Column="2" />
+      <File FileName="Droid/Activities/AccountInfoActivity.cs" Line="61" Column="15" />
+      <File FileName="Droid/Resources/layout/activity_accountInfo.xml" Line="45" Column="11" />
+      <File FileName="Droid/Activities/BaseActivity.cs" Line="13" Column="6" />
+      <File FileName="SampleLogin/ViewModels/AccountInfoViewModel.cs" Line="95" Column="14" />
+      <File FileName="SampleLogin/ViewModels/BaseViewModel.cs" Line="18" Column="10" />
+      <File FileName="Droid/Activities/LoginActivity.cs" Line="44" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +17,7 @@
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="ViewModels" expanded="True">
-                <Node name="LoginUserViewModel.cs" selected="True" />
+                <Node name="AccountInfoViewModel.cs" selected="True" />
               </Node>
             </Node>
             <Node name="SampleLogin.Droid" expanded="True">
@@ -41,12 +37,14 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.SampleLogin FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.SampleLogin.Droid AndroidDesignerPreferredTheme="MasterDetailTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.pixel_3a_xl_q_10_0_-_api_29" />
+  <MonoDevelop.Ide.ItemProperties.SampleLogin.Droid AndroidDesignerPreferredTheme="MasterDetailTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.R58N137QZ8P" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/nutulapr/Projects/SampleLogin/Droid/Helpers/DataBaseHelper.cs" relfile="Droid/Helpers/DataBaseHelper.cs" line="54" column="1" />
       <Breakpoint file="/Users/nutulapr/Projects/SampleLogin/Droid/Helpers/DataBaseHelper.cs" relfile="Droid/Helpers/DataBaseHelper.cs" line="36" column="1" />
+      <Breakpoint file="/Users/nutulapr/Projects/SampleLogin/SampleLogin/ViewModels/AccountInfoViewModel.cs" relfile="SampleLogin/ViewModels/AccountInfoViewModel.cs" line="88" column="1" />
+      <Breakpoint file="/Users/nutulapr/Projects/SampleLogin/SampleLogin/ViewModels/AccountInfoViewModel.cs" relfile="SampleLogin/ViewModels/AccountInfoViewModel.cs" line="90" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

@@ -11,11 +11,15 @@ namespace SampleLogin.Droid
 {
     public class BaseActivity : AppCompatActivity
     {
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
             SetContentView(LayoutResource);
-            Toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+
+
+            Toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             if (Toolbar != null)
             {
                 SetSupportActionBar(Toolbar);
@@ -25,7 +29,7 @@ namespace SampleLogin.Droid
             }
         }
 
-        public Toolbar Toolbar
+        public Android.Support.V7.Widget.Toolbar Toolbar
         {
             get;
             set;

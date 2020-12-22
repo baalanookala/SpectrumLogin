@@ -2,7 +2,7 @@
 {
     public static class StringConstants
     {
-        public static string success = "Success";
+        public static string success = "Login Success";
         public static string failedLogin = "Failed to Login";
         public static string noUser = "User doesn't exist";
         public static string wrongPassword = "Please check your password.";

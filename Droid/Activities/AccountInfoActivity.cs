@@ -26,6 +26,7 @@ namespace SampleLogin.Droid.Activities
         EditText phoneNumber;
         EditText accountDatePicker;
         Button createAccount;
+        DatePickerDialog datePicker;
 
         readonly AccountInfoViewModel viewModel = new AccountInfoViewModel();
 
@@ -52,6 +53,7 @@ namespace SampleLogin.Droid.Activities
 
             viewModel.ActivateCreateButton = CreateButton;
             viewModel.OnCreationSuccess = AccountSucess;
+            viewModel.ShowErrorToast = ShowToast;
 
             accountDatePicker.Click += delegate
             {
@@ -89,13 +91,17 @@ namespace SampleLogin.Droid.Activities
         private void OnClickDateEditText()
         {
             var dateTimeNow = DateTime.Now;
-            DatePickerDialog datePicker = new DatePickerDialog(this, this, dateTimeNow.Year, dateTimeNow.Month, dateTimeNow.Day);
+            datePicker = new DatePickerDialog(this, this, dateTimeNow.Year, dateTimeNow.Month, dateTimeNow.Day);
             datePicker.Show();
         }
 
         public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
         {
             accountDatePicker.Text = new DateTime(year, month + 1, dayOfMonth).ToShortDateString();
+            SetText(accountDatePicker.Text, InputField.date);
+            accountDatePicker.ClearFocus();
+            HideKeyboard();
+            datePicker.Dismiss();
         }
 
         public void SetText(string userInput, InputField field)

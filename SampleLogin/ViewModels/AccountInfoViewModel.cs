@@ -22,6 +22,7 @@ namespace SampleLogin.ViewModels
         public Action OnCreationSuccess { get; set; }
         public Action<bool> ActivateCreateButton { get; set; }
 
+        private bool isValidDate;
         public void UserInputChanged()
         {
             var hasValidFirstName = !string.IsNullOrWhiteSpace(firstName) && IsValidName(firstName);
@@ -29,7 +30,7 @@ namespace SampleLogin.ViewModels
             var hasValidUserName = !string.IsNullOrWhiteSpace(userName);
             var hasValidPassword = !string.IsNullOrWhiteSpace(password) && IsValidPassword(password);
             var hasValidPhoneNumber = !string.IsNullOrWhiteSpace(phoneNumber) && phoneNumber.Length.Equals(10);
-            if (hasValidFirstName && hasValidLastName && hasValidUserName && hasValidPassword && hasValidPhoneNumber)
+            if (hasValidFirstName && hasValidLastName && hasValidUserName && hasValidPassword && hasValidPhoneNumber && isValidDate)
             {
                 ActivateCreateButton?.Invoke(true);
                 return;
@@ -87,10 +88,12 @@ namespace SampleLogin.ViewModels
             if (isPastDate || isFutureDate)
             {
                 ShowErrorToast?.Invoke(StringConstants.invalidDate);
+                isValidDate = false;
                 return;
             }
             else
             {
+                isValidDate = true;
                 UserInputChanged();
             }
         }
