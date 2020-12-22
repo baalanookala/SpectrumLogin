@@ -2,7 +2,6 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
@@ -57,10 +56,10 @@ namespace SampleLogin.Droid
             }
         }
 
-        public void ShowToast(string text)
+        protected void ShowToast(string text)
         {
             var toast = Toast.MakeText(this, text, ToastLength.Long);
-            toast.SetGravity(GravityFlags.Center, 0, 0);
+            toast.SetGravity(GravityFlags.Top, 0, 0);
             toast.Show();
         }
     }

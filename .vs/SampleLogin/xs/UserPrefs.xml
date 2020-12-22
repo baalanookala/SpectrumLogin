@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{69F34BD6-46D5-4C4C-8551-028CE9EBFC91}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Droid/Activities/AccountInfoActivity.cs" Line="61" Column="15" />
+      <File FileName="Droid/Activities/AccountInfoActivity.cs" Line="150" Column="1" />
       <File FileName="Droid/Resources/layout/activity_accountInfo.xml" Line="45" Column="11" />
-      <File FileName="Droid/Activities/BaseActivity.cs" Line="13" Column="6" />
-      <File FileName="SampleLogin/ViewModels/AccountInfoViewModel.cs" Line="95" Column="14" />
-      <File FileName="SampleLogin/ViewModels/BaseViewModel.cs" Line="18" Column="10" />
+      <File FileName="Droid/Activities/BaseActivity.cs" Line="62" Column="46" />
+      <File FileName="SampleLogin/ViewModels/AccountInfoViewModel.cs" Line="90" Column="1" />
+      <File FileName="SampleLogin/ViewModels/BaseViewModel.cs" Line="11" Column="12" />
       <File FileName="Droid/Activities/LoginActivity.cs" Line="44" Column="13" />
     </Files>
     <Pads>
@@ -16,18 +16,11 @@
               <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="AccountInfoViewModel.cs" selected="True" />
-              </Node>
+              <Node name="ViewModels" expanded="True" />
             </Node>
             <Node name="SampleLogin.Droid" expanded="True">
-              <Node name="Activities" expanded="True" />
-              <Node name="Assets" expanded="True" />
-              <Node name="Helpers" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
-              <Node name="Resources" expanded="True">
-                <Node name="layout" expanded="True" />
-                <Node name="values" expanded="True" />
+              <Node name="Activities" expanded="True">
+                <Node name="BaseActivity.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -37,7 +30,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.SampleLogin FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.SampleLogin.Droid AndroidDesignerPreferredTheme="MasterDetailTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.R58N137QZ8P" />
+  <MonoDevelop.Ide.ItemProperties.SampleLogin.Droid AndroidDesignerPreferredTheme="MasterDetailTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.pixel_3a_xl_q_10_0_-_api_29" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
