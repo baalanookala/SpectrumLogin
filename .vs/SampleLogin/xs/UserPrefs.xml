@@ -2,11 +2,15 @@
   <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Droid/Activities/ValidationActivity.cs" Line="4" Column="27" />
-      <File FileName="Droid/Activities/LoginActivity.cs" Line="72" Column="36" />
-      <File FileName="Droid/Resources/values/Strings.xml" Line="23" Column="27" />
-      <File FileName="Droid/Resources/values/colors.xml" Line="11" Column="1" />
-      <File FileName="Droid/Resources/layout/activity_accountInfo.xml" Line="59" Column="16" />
-      <File FileName="Droid/Resources/values/dimens.axml" Line="15" Column="32" />
+      <File FileName="Droid/Activities/LoginActivity.cs" Line="13" Column="52" />
+      <File FileName="Droid/Resources/values/Strings.xml" />
+      <File FileName="Droid/Resources/values/colors.xml" />
+      <File FileName="Droid/Activities/BaseActivity.cs" Line="28" Column="31" />
+      <File FileName="Droid/Activities/AccountInfoActivity.cs" Line="54" Column="57" />
+      <File FileName="SampleLogin/ViewModels/AccountInfoViewModel.cs" Line="93" Column="14" />
+      <File FileName="SampleLogin/Helpers/StringConstants.cs" Line="11" Column="88" />
+      <File FileName="SampleLogin/ViewModels/LoginUserViewModel.cs" Line="18" Column="36" />
+      <File FileName="SampleLogin/ViewModels/BaseViewModel.cs" Line="8" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +20,9 @@
               <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="LoginUserViewModel.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="SampleLogin.Droid" expanded="True">
               <Node name="Activities" expanded="True" />
@@ -24,17 +30,12 @@
               <Node name="Helpers" expanded="True" />
               <Node name="Interfaces" expanded="True" />
               <Node name="Resources" expanded="True">
-                <Node name="layout" expanded="True">
-                  <Node name="activity_accountInfo.xml" selected="True" />
-                </Node>
+                <Node name="layout" expanded="True" />
                 <Node name="values" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

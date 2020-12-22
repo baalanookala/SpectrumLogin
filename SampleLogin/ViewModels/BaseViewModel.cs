@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using SampleLogin.Helpers;
 using SampleLogin.Models;
 
 namespace SampleLogin
@@ -24,6 +23,8 @@ namespace SampleLogin
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+
+        public Action<string> ShowErrorToast { get; set; }
 
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",

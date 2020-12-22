@@ -53,7 +53,6 @@ namespace SampleLogin.Droid.Activities
             viewModel.ActivateCreateButton = CreateButton;
             viewModel.OnCreationSuccess = AccountSucess;
 
-
             accountDatePicker.Click += delegate
             {
                 OnClickDateEditText();

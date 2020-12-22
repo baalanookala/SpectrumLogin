@@ -18,7 +18,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginUserViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\AccountInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AccountInfoViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IDataBaseHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RegexPatterns.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\StringConstants.cs" />
   </ItemGroup>

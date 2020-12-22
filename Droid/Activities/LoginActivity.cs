@@ -61,14 +61,6 @@ namespace SampleLogin.Droid.Activities
             StartActivity(validationAct);
         }
 
-        private void ShowToast(string text)
-        {
-            var toast = Toast.MakeText(this, text, ToastLength.Long);
-            toast.SetGravity(GravityFlags.Center, 0, 0);
-            toast.Show();
-        }
-
-
         public void OnClick(View v)
         {
             switch (v.Id)

@@ -13,7 +13,6 @@ namespace SampleLogin
         }
         public Action OnLoginSuccess { get; set; }
         public Action<bool> ActivateButton { get; set; }
-        public Action<string> ShowErrorToast { get; set; }
 
         public string userId;
         public string userPassword;

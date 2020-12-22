@@ -20,7 +20,6 @@ namespace SampleLogin.ViewModels
         }
 
         public Action OnCreationSuccess { get; set; }
-        public Action OnCreationFailure { get; set; }
         public Action<bool> ActivateCreateButton { get; set; }
 
         public void UserInputChanged()
@@ -64,7 +63,7 @@ namespace SampleLogin.ViewModels
                 OnCreationSuccess?.Invoke();
                 return;
             }
-            OnCreationFailure?.Invoke();
+            ShowErrorToast?.Invoke(StringConstants.accountFailed);
         }
 
         public async void CreateAccountAsync()
@@ -87,9 +86,8 @@ namespace SampleLogin.ViewModels
             bool isFutureDate = startDate > DateTime.Now.AddMonths(1);
             if (isPastDate || isFutureDate)
             {
-                // Show Toast
+                ShowErrorToast?.Invoke(StringConstants.invalidDate);
                 return;
-
             }
             else
             {

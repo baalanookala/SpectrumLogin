@@ -3,7 +3,9 @@ using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
+using Android.Views;
 using Android.Views.InputMethods;
+using Android.Widget;
 
 namespace SampleLogin.Droid
 {
@@ -49,6 +51,13 @@ namespace SampleLogin.Droid
 
                 this.Window.DecorView.ClearFocus();
             }
+        }
+
+        public void ShowToast(string text)
+        {
+            var toast = Toast.MakeText(this, text, ToastLength.Long);
+            toast.SetGravity(GravityFlags.Center, 0, 0);
+            toast.Show();
         }
     }
 }
