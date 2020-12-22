@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -19,6 +18,7 @@ namespace SampleLogin.Droid.Activities
     {
 
         protected override int LayoutResource => Resource.Layout.activity_accountInfo;
+
         EditText firstName;
         EditText lastName;
         EditText userName;
@@ -26,8 +26,8 @@ namespace SampleLogin.Droid.Activities
         EditText phoneNumber;
         EditText accountDatePicker;
         Button createAccount;
-        readonly AccountInfoViewModel viewModel = new AccountInfoViewModel();
 
+        readonly AccountInfoViewModel viewModel = new AccountInfoViewModel();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

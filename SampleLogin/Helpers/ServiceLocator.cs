@@ -10,7 +10,6 @@ namespace SampleLogin
 
         public static ServiceLocator Instance => instance.Value;
 
-
         public void Register<TContract, TService>() where TService : new()
         {
             registeredServices[typeof(TContract)] =

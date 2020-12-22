@@ -144,16 +144,6 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_save.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_save.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_save.png" />
-    <AndroidResource Include="Resources\layout\activity_add_item.axml" />
-    <AndroidResource Include="Resources\layout\activity_item_details.axml" />
-    <AndroidResource Include="Resources\layout\activity_main.axml" />
-    <AndroidResource Include="Resources\layout\activity_myitem_details.axml" />
-    <AndroidResource Include="Resources\layout\fragment_about.axml" />
-    <AndroidResource Include="Resources\layout\fragment_browse.axml" />
-    <AndroidResource Include="Resources\layout\fragment_myitems.axml" />
-    <AndroidResource Include="Resources\layout\item_browse.axml" />
-    <AndroidResource Include="Resources\layout\item_my_item.axml" />
-    <AndroidResource Include="Resources\layout\tabs.axml" />
     <AndroidResource Include="Resources\layout\toolbar.axml" />
     <AndroidResource Include="Resources\menu\top_menus.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />

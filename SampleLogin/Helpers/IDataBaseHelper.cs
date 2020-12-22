@@ -2,8 +2,8 @@
 {
     public interface IDataBaseHelper
     {
-        object fetchRecord(string key);
-        void insertRecord<Key, Value>(ref Key key, ref Value value);
+        object FetchRecord(string key);
+        void InsertRecord<Key, Value>(ref Key key, ref Value value);
     }
 
 }

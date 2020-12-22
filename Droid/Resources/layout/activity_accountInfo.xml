@@ -3,35 +3,35 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:gravity="center"
-	android:padding="10dp"
+	android:padding="@dimen/twentyDp"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/firstName"
-		android:paddingBottom="20dp"
+		android:paddingBottom="@dimen/twentyDp"
 		android:hint="@string/firstName"
 		android:inputType="text" />
 	<EditText
 		android:inputType="text"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingBottom="20dp"
+		android:paddingBottom="@dimen/twentyDp"
 		android:hint="@string/lastName"
 		android:id="@+id/lastName" />
 	<EditText
 		android:inputType="text"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingBottom="20dp"
+		android:paddingBottom="@dimen/twentyDp"
 		android:hint="@string/userName"
 		android:id="@+id/userName" />
 	<EditText
 		android:inputType="textPassword"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingBottom="20dp"
+		android:paddingBottom="@dimen/twentyDp"
 		android:hint="@string/password"
 		android:id="@+id/newPassword" />
 	<EditText
@@ -39,21 +39,21 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:maxLength="13"
-		android:paddingBottom="20dp"
+		android:paddingBottom="@dimen/twentyDp"
 		android:hint="@string/phoneNum"
 		android:id="@+id/phonenumber" />
 	<EditText
 		android:inputType="date"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingBottom="20dp"
+		android:paddingBottom="@dimen/twentyDp"
 		android:hint="@string/startDate"
 		android:id="@+id/accountDatePicker" />
 	<Button
 		android:text="@string/create_account"
-		android:layout_width="150dp"
+		android:layout_width="@dimen/hundredFiftyDp"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="25dp"
+		android:layout_marginTop="@dimen/twentyDp"
 		android:enabled="false"
 		android:id="@+id/createAccount" />
 </LinearLayout>

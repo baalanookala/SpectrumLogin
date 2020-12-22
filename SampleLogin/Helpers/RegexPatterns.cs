@@ -1,5 +1,4 @@
-﻿using System;
-namespace SampleLogin.Helpers
+﻿namespace SampleLogin.Helpers
 {
     public static class RegexPatterns
     {

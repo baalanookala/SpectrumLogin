@@ -13,7 +13,6 @@ namespace SampleLogin.Droid.Activities
         TextView statusMesg;
         ImageView statusImage;
 
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -26,13 +25,11 @@ namespace SampleLogin.Droid.Activities
             if (isSuccess)
             {
                 statusMesg.Text = StringConstants.success;
-                statusMesg.SetTextColor(Resources.GetColor(Resource.Color.green));
                 statusImage.SetImageResource(Resource.Drawable.check);
             }
             else
             {
                 statusMesg.Text = StringConstants.failedLogin;
-                statusMesg.SetTextColor(Resources.GetColor(Resource.Color.red));
                 statusImage.SetImageResource(Resource.Drawable.failed);
             }
         }

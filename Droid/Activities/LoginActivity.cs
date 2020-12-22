@@ -17,10 +17,12 @@ namespace SampleLogin.Droid.Activities
     public class LoginActivity : BaseActivity, View.IOnClickListener, IOnTextChanged
     {
         protected override int LayoutResource => Resource.Layout.activity_login;
+
         EditText userId;
         EditText password;
         Button signIn_btn;
         TextView newUser_btn;
+
         readonly LoginUserViewModel viewModel = new LoginUserViewModel();
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -62,6 +64,7 @@ namespace SampleLogin.Droid.Activities
         private void ShowToast(string text)
         {
             var toast = Toast.MakeText(this, text, ToastLength.Long);
+            toast.SetGravity(GravityFlags.Center, 0, 0);
             toast.Show();
         }
 

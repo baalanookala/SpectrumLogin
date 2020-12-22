@@ -71,16 +71,6 @@
 /Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/drawable-xhdpi/ic_save.png
 /Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/drawable-xxhdpi/ic_save.png
 /Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/drawable-xxxhdpi/ic_save.png
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/activity_add_item.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/activity_item_details.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/activity_main.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/activity_myitem_details.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/fragment_about.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/fragment_browse.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/fragment_myitems.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/item_browse.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/item_my_item.xml
-/Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/tabs.xml
 /Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/layout/toolbar.xml
 /Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/menu/top_menus.xml
 /Users/nutulapr/Projects/SampleLogin/Droid/obj/Debug/res/mipmap-hdpi/icon.png
